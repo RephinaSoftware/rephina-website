@@ -1,4 +1,4 @@
-// Centralized content. Edit here to update the site copy globally.
+// Single source of truth for site copy.
 
 export const company = {
   name: "Rephina Software Solutions",
@@ -20,7 +20,7 @@ export const company = {
 export const services = [
   {
     slug: "custom-software",
-    title: "Custom Software Development",
+    title: "Custom Software",
     short: "Full-stack web apps, APIs and mobile apps built for your workflow.",
     icon: "code",
     bullets: [
@@ -33,9 +33,8 @@ export const services = [
   },
   {
     slug: "ai-automation",
-    title: "AI & Intelligent Automation",
-    short:
-      "Practical AI that saves hours — WhatsApp bots, generative AI and process automation.",
+    title: "AI & Automation",
+    short: "Practical AI that saves hours — WhatsApp bots, generative AI, process automation.",
     icon: "spark",
     bullets: [
       "WhatsApp & web AI chatbots",
@@ -47,9 +46,8 @@ export const services = [
   },
   {
     slug: "power-platform",
-    title: "Microsoft Power Platform",
-    short:
-      "Enterprise-grade business apps for a fraction of custom-development cost.",
+    title: "Power Platform",
+    short: "Enterprise-grade business apps for a fraction of custom-development cost.",
     icon: "platform",
     bullets: [
       "Power Apps for mobile & field teams",
@@ -61,9 +59,8 @@ export const services = [
   },
   {
     slug: "web-saas",
-    title: "Web, E-commerce & SaaS",
-    short:
-      "From a marketing site to a multi-tenant SaaS product — done right.",
+    title: "Web, E-com & SaaS",
+    short: "From a marketing site to a multi-tenant SaaS product — done right.",
     icon: "globe",
     bullets: [
       "WordPress & WooCommerce e-commerce",
@@ -75,9 +72,8 @@ export const services = [
   },
   {
     slug: "consulting",
-    title: "Consulting & Strategy",
-    short:
-      "Fractional CTO, technology assessments and digital transformation roadmaps.",
+    title: "Consulting",
+    short: "Fractional CTO, technology assessments and digital transformation roadmaps.",
     icon: "compass",
     bullets: [
       "Technology needs assessment",
@@ -89,9 +85,8 @@ export const services = [
   },
   {
     slug: "support",
-    title: "Support & Maintenance",
-    short:
-      "Ongoing care, hosting, security patches and priority response — month-to-month.",
+    title: "Support",
+    short: "Ongoing care, hosting, security patches and priority response — month-to-month.",
     icon: "shield",
     bullets: [
       "Monthly maintenance retainers",
@@ -109,16 +104,16 @@ export const pillars = [
     body: "Pricing in Rands. Flexible payment terms. Phased delivery so a small budget today doesn't block big ambitions tomorrow.",
   },
   {
-    title: "Local understanding",
-    body: "South African team for South African businesses. We know POPIA, load-shedding, PayFast, the Rand, and what it costs to actually run a business here.",
+    title: "Local context",
+    body: "South African team for South African businesses. We know POPIA, load-shedding, PayFast, and what it costs to run a business here.",
   },
   {
-    title: "Enterprise-grade quality",
-    body: "Code review, automated tests, security best practice and production-ready hosting — the same standards used by large firms, at SME scale.",
+    title: "Enterprise quality",
+    body: "Code review, automated tests, security best practice and production-grade hosting — the same standards used by large firms.",
   },
   {
-    title: "Partnership, not a vendor",
-    body: "We educate, train and stay with you long after launch. Most of our project clients move into ongoing support partnerships.",
+    title: "Long partnership",
+    body: "We educate, train and stay with you long after launch. Most project clients move into ongoing support partnerships.",
   },
 ];
 
@@ -145,22 +140,34 @@ export const process = [
   },
 ];
 
-export const industries = [
-  { name: "Professional services", icon: "briefcase" },
-  { name: "E-commerce & retail", icon: "shopping" },
-  { name: "Hospitality & events", icon: "utensils" },
-  { name: "Healthcare & wellness", icon: "heart" },
-  { name: "Creative agencies", icon: "palette" },
-  { name: "Education & training", icon: "book" },
-  { name: "Startups & SaaS", icon: "rocket" },
-  { name: "Township enterprises", icon: "store" },
+// Concise, honest metrics that don't require client wins to be true.
+export const stats = [
+  { value: "1–2w",  label: "Discovery → first working demo" },
+  { value: "<24h",  label: "Response time on every enquiry" },
+  { value: "100%",  label: "South African team & timezone" },
+  { value: "30d+",  label: "Post-launch warranty, every project" },
 ];
 
-export const stats = [
-  { value: "98%", label: "of SA businesses are SMEs — our entire focus" },
-  { value: "Build", label: "Custom software, web and mobile" },
-  { value: "Automate", label: "AI, Power Platform and workflow tooling" },
-  { value: "Grow", label: "Ongoing partnership long after launch" },
+// Tech stack we work in — surfaced as a marquee on the home page.
+export const stack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "Tailwind CSS",
+  "PostgreSQL",
+  "MongoDB",
+  "Power Apps",
+  "Power Automate",
+  "OpenAI",
+  "Claude",
+  "WordPress",
+  "WooCommerce",
+  "React Native",
+  "Cloudflare",
+  "Azure",
+  "AWS",
 ];
 
 export const navLinks = [

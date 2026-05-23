@@ -25,10 +25,8 @@ export default function Nav() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-ink-100 bg-white/90 backdrop-blur"
-          : "bg-white/70 backdrop-blur"
+      className={`sticky top-0 z-50 transition-[border,background] duration-300 glass-nav ${
+        scrolled ? "border-b border-ink-200/60" : "border-b border-transparent"
       }`}
     >
       <Container className="flex h-20 items-center justify-between">
@@ -36,7 +34,7 @@ export default function Nav() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-1 lg:flex"
         >
           {navLinks.map((link) => {
             const active =
@@ -47,24 +45,31 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`group relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors ${
                   active
-                    ? "text-brand-800"
+                    ? "text-brand-900"
                     : "text-ink-600 hover:text-ink-900"
                 }`}
               >
-                {link.label}
+                <span className="relative z-10">{link.label}</span>
+                {active && (
+                  <span className="absolute inset-0 -z-0 rounded-full bg-ink-100" />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-3">
+          <span className="hidden xl:inline-flex items-center gap-2 rounded-full border border-ink-200 px-3 py-1 text-xs font-mono text-ink-500">
+            <span className="dot-live" />
+            <span>accepting projects</span>
+          </span>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-brand-800 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-900"
+            className="inline-flex items-center gap-1.5 rounded-full bg-brand-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-800"
           >
-            Book a free consult
+            Start a project
             <ArrowRight />
           </Link>
         </div>
@@ -82,8 +87,8 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden border-t border-ink-100 bg-white transition-[max-height,opacity] duration-300 ${
-          open ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden overflow-hidden border-t border-ink-100 glass-nav transition-[max-height,opacity] duration-300 ${
+          open ? "max-h-[480px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <Container className="flex flex-col gap-1 py-4">
@@ -96,9 +101,9 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-lg px-3 py-2.5 text-base font-medium ${
+                className={`rounded-xl px-3 py-3 text-base font-medium transition ${
                   active
-                    ? "bg-brand-50 text-brand-800"
+                    ? "bg-ink-100 text-brand-900"
                     : "text-ink-700 hover:bg-ink-50"
                 }`}
               >
@@ -108,11 +113,15 @@ export default function Nav() {
           })}
           <Link
             href="/contact"
-            className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-800 px-4 py-2.5 text-sm font-medium text-white"
+            className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-900 px-4 py-3 text-sm font-medium text-white"
           >
-            Book a free consult
+            Start a project
             <ArrowRight />
           </Link>
+          <span className="mt-2 inline-flex items-center justify-center gap-2 text-xs font-mono text-ink-500">
+            <span className="dot-live" />
+            accepting projects
+          </span>
         </Container>
       </div>
     </header>
