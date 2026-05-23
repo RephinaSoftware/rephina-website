@@ -1,0 +1,13 @@
+// Cloudflare Workers config — deploys /out as a static-assets Worker.
+// Without this file Wrangler auto-detects "Next.js" and tries to convert
+// the project to OpenNext (SSR), which fails for a static-export build.
+// Docs: https://developers.cloudflare.com/workers/static-assets/
+{
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "rephina-website",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
