@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand navy — primary (matches REPHINA wordmark) */
+  --color-brand-50:  #f1f5fa;
+  --color-brand-100: #d9e6f1;
+  --color-brand-200: #b4cce3;
+  --color-brand-300: #87aacd;
+  --color-brand-400: #5b86b1;
+  --color-brand-500: #3d6896;
+  --color-brand-600: #2d527a;
+  --color-brand-700: #244266;
+  --color-brand-800: #1c3a5d;
+  --color-brand-900: #142a45;
+  --color-brand-950: #0c1a2d;
+
+  /* Sky — secondary blue (matches circuit traces / "SOFTWARE" wordmark) */
+  --color-sky-50:  #f0f7fc;
+  --color-sky-100: #d9ecf6;
+  --color-sky-200: #b3d8ec;
+  --color-sky-300: #87bfde;
+  --color-sky-400: #5fa3cd;
+  --color-sky-500: #4188b8;
+  --color-sky-600: #336c9a;
+  --color-sky-700: #2c577d;
+  --color-sky-800: #294967;
+  --color-sky-900: #263e57;
+
+  /* Accent lime — growth / call-to-action highlight (matches green triangle + "SOLUTIONS" wordmark) */
+  --color-accent-50:  #f6faec;
+  --color-accent-100: #e8f3c8;
+  --color-accent-200: #d4e89c;
+  --color-accent-300: #b9d76a;
+  --color-accent-400: #a4c84a;
+  --color-accent-500: #8fb53a;
+  --color-accent-600: #6f922b;
+  --color-accent-700: #547023;
+  --color-accent-800: #455a21;
+  --color-accent-900: #3a4c1e;
+
+  /* Ink — neutral slate */
+  --color-ink-50:  #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #020617;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle dotted background pattern utility */
+.bg-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgb(15 23 42 / 0.07) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Subtle circuit-trace background (echoes the logo's circuit motif) */
+.bg-circuit {
+  background-image:
+    linear-gradient(to right, rgb(95 163 205 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(143 181 58 / 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Gradient text utility — navy → sky → lime, mirrors the brand */
+.gradient-text {
+  background: linear-gradient(120deg, var(--color-brand-800), var(--color-sky-400) 55%, var(--color-accent-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
