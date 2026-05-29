@@ -32,7 +32,7 @@ export default function CtaSection({
           <div className="relative grid gap-10 px-8 py-16 sm:px-14 sm:py-20 md:grid-cols-[1.4fr_1fr] md:items-center">
             <div className="max-w-2xl">
               <span className="inline-flex items-center gap-2 rounded-full glass-dark px-3 py-1.5 text-xs font-mono uppercase tracking-[0.18em] text-white/80">
-                <span className="dot-live" />
+                <span className="" />
                 next step
               </span>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -44,7 +44,7 @@ export default function CtaSection({
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href={primaryHref}
-                  className="group inline-flex items-center gap-2 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-brand-950 transition hover:bg-accent-400"
+                  className="btn-glow group inline-flex items-center gap-2 rounded-full bg-accent-500 px-5 py-3 text-sm font-semibold text-brand-950 transition hover:bg-accent-400"
                 >
                   {primaryLabel}
                   <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>

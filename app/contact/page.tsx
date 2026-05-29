@@ -21,7 +21,6 @@ export default function ContactPage() {
       />
 
       <section className="relative py-20">
-        <div className="absolute inset-0 bg-grid opacity-50" aria-hidden="true" />
         <Container className="relative">
           <div className="grid gap-10 md:grid-cols-[1fr_1.5fr]">
             <Reveal>
@@ -84,7 +83,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="rounded-2xl border border-ink-100 bg-white/80 p-7 backdrop-blur sm:p-9">
+              <div className="rounded-2xl glass-light p-7 shadow-sm sm:p-9">
                 <Suspense fallback={<div className="text-sm text-ink-500">Loading form…</div>}>
                   <ContactForm />
                 </Suspense>
@@ -107,7 +106,7 @@ function ContactCard({
   hint?: string;
 }) {
   return (
-    <div className="rounded-2xl border border-ink-100 bg-white/80 p-5 backdrop-blur transition hover:border-brand-200">
+    <div className="rounded-2xl glass-light p-5 shadow-sm transition hover:-translate-y-0.5">
       <h3 className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500">
         {label}
       </h3>

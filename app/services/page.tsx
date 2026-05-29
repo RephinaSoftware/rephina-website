@@ -21,79 +21,50 @@ export default function ServicesPage() {
         description="From a marketing site to a multi-tenant SaaS product. Built and supported in South Africa."
       />
 
-      {/* Quick-jump index */}
-      <section className="border-b border-ink-100 bg-white">
-        <Container className="py-5">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-500">
-              jump
-            </span>
-            {services.map((s, i) => (
-              <Link
-                key={s.slug}
-                href={`#${s.slug}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-white px-3 py-1 font-mono text-[11px] text-ink-700 transition hover:border-brand-300 hover:text-brand-800"
-              >
-                <span className="text-ink-400">{String(i + 1).padStart(2, "0")}</span>
-                {s.title}
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="relative py-20 sm:py-24">
-        <div className="absolute inset-0 bg-grid opacity-50" aria-hidden="true" />
         <Container className="relative">
-          <div className="grid gap-12">
-            {services.map((s, idx) => (
-              <Reveal key={s.slug}>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((s, i) => (
+              <Reveal key={s.slug} delay={(i % 3) * 80}>
                 <article
                   id={s.slug}
-                  className="grid scroll-mt-28 gap-8 rounded-3xl border border-ink-100 bg-white/80 p-8 backdrop-blur md:grid-cols-[260px_1fr] md:gap-12 md:p-10"
+                  className="group relative flex h-full scroll-mt-28 flex-col overflow-hidden rounded-2xl glass-light shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-900/[0.06]"
                 >
-                  <div className="border-b border-ink-100 pb-6 md:border-b-0 md:border-r md:pb-0 md:pr-8">
-                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-950 text-accent-400 shadow-sm shadow-brand-900/20">
+                  {/* dark header — service icon + category badge */}
+                  <div className="relative flex h-36 items-center justify-center overflow-hidden bg-brand-950">
+                    <div className="absolute inset-0 bg-grid-dark opacity-50" aria-hidden="true" />
+                    <div
+                      aria-hidden="true"
+                      className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-accent-500/25 blur-3xl"
+                    />
+                    <span className="absolute left-5 top-5 inline-flex items-center rounded-full glass-dark px-3 py-1 text-[11px] font-medium text-white/80">
+                      {s.tag}
+                    </span>
+                    <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 text-accent-400 ring-1 ring-white/10 transition group-hover:bg-accent-500 group-hover:text-brand-950 group-hover:ring-accent-300">
                       <ServiceIcon name={s.icon} className="h-7 w-7" />
                     </span>
-                    <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500">
-                      service · {String(idx + 1).padStart(2, "0")}
-                    </p>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink-900">
-                      {s.title}
-                    </h2>
                   </div>
 
-                  <div>
-                    <p className="text-ink-700">{s.short}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h2 className="text-lg font-semibold text-ink-900">{s.title}</h2>
+                    <p className="mt-2 text-sm text-ink-600">{s.short}</p>
 
-                    <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <ul className="mt-4 space-y-2">
                       {s.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-3 rounded-xl border border-ink-100 bg-ink-50/60 p-3.5"
-                        >
+                        <li key={b} className="flex items-start gap-2.5 text-sm text-ink-700">
                           <CheckIcon />
-                          <span className="text-sm text-ink-700">{b}</span>
+                          <span>{b}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <div className="mt-6 flex flex-wrap gap-3">
-                      <Link
-                        href={`/contact?service=${s.slug}`}
-                        className="group inline-flex items-center gap-2 rounded-full bg-brand-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-800"
-                      >
-                        Get a quote
-                        <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
-                      </Link>
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 rounded-full border border-ink-200 px-4 py-2 text-sm font-medium text-ink-800 transition hover:border-ink-300 hover:bg-ink-50"
-                      >
-                        Book a free consult
-                      </Link>
-                    </div>
+                    <Link
+                      href={`/contact?service=${s.slug}`}
+                      className="group/btn mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand-800 transition hover:text-brand-900"
+                    >
+                      Get a quote
+                      <span aria-hidden="true" className="transition-transform group-hover/btn:translate-x-0.5">→</span>
+                    </Link>
                   </div>
                 </article>
               </Reveal>

@@ -120,7 +120,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 rounded-full bg-brand-800 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:bg-brand-900 disabled:opacity-60"
+          className="btn-glow inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-sm font-semibold text-brand-950 shadow-sm transition hover:bg-accent-400 disabled:opacity-60"
         >
           {status === "submitting" ? "Sending…" : "Send enquiry"}
           <span aria-hidden="true">→</span>

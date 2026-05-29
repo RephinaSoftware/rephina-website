@@ -6,7 +6,7 @@ export const company = {
   legalName: "Rephina Software Solutions (Pty) Ltd",
   registration: "2026/250285/07",
   location: "South Africa",
-  email: "rephinasoftware@gmail.com",
+  email: "info@rephinasoftware.com",
   phone: "071 927 9462",
   phoneE164: "+27719279462",
   tagline: "Build · Automate · Grow.",
@@ -21,6 +21,7 @@ export const services = [
   {
     slug: "custom-software",
     title: "Custom Software",
+    tag: "Build",
     short: "Full-stack web apps, APIs and mobile apps built for your workflow.",
     icon: "code",
     bullets: [
@@ -34,6 +35,7 @@ export const services = [
   {
     slug: "ai-automation",
     title: "AI & Automation",
+    tag: "Automate",
     short: "Practical AI that saves hours — WhatsApp bots, generative AI, process automation.",
     icon: "spark",
     bullets: [
@@ -47,6 +49,7 @@ export const services = [
   {
     slug: "power-platform",
     title: "Power Platform",
+    tag: "Low-code",
     short: "Enterprise-grade business apps for a fraction of custom-development cost.",
     icon: "platform",
     bullets: [
@@ -60,6 +63,7 @@ export const services = [
   {
     slug: "web-saas",
     title: "Web, E-com & SaaS",
+    tag: "Web",
     short: "From a marketing site to a multi-tenant SaaS product — done right.",
     icon: "globe",
     bullets: [
@@ -73,6 +77,7 @@ export const services = [
   {
     slug: "consulting",
     title: "Consulting",
+    tag: "Advisory",
     short: "Fractional CTO, technology assessments and digital transformation roadmaps.",
     icon: "compass",
     bullets: [
@@ -86,6 +91,7 @@ export const services = [
   {
     slug: "support",
     title: "Support",
+    tag: "Care",
     short: "Ongoing care, hosting, security patches and priority response — month-to-month.",
     icon: "shield",
     bullets: [
@@ -101,79 +107,74 @@ export const services = [
 export const pillars = [
   {
     title: "Accessibility first",
+    icon: "spark",
     body: "Pricing in Rands. Flexible payment terms. Phased delivery so a small budget today doesn't block big ambitions tomorrow.",
   },
   {
     title: "Local context",
+    icon: "globe",
     body: "South African team for South African businesses. We know POPIA, load-shedding, PayFast, and what it costs to run a business here.",
   },
   {
     title: "Enterprise quality",
+    icon: "shield",
     body: "Code review, automated tests, security best practice and production-grade hosting — the same standards used by large firms.",
   },
   {
     title: "Long partnership",
+    icon: "heart",
     body: "We educate, train and stay with you long after launch. Most project clients move into ongoing support partnerships.",
   },
 ];
 
 export const process = [
   {
-    step: "01",
+    icon: "compass",
     title: "Discovery",
     body: "Stakeholder interviews, clear scope, realistic timeline. 1–2 weeks before any code is written.",
   },
   {
-    step: "02",
+    icon: "code",
     title: "Agile build",
     body: "1–2 week sprints with weekly demos. You see real progress, not slide decks.",
   },
   {
-    step: "03",
+    icon: "rocket",
     title: "Launch",
     body: "Deployment, data migration, user training, go-live support. We don't throw it over the wall.",
   },
   {
-    step: "04",
+    icon: "heart",
     title: "Partnership",
     body: "Monthly support retainers, feature iterations and strategic guidance as you grow.",
   },
 ];
 
-// Concise, honest metrics that don't require client wins to be true.
-export const stats = [
-  { value: "1–2w",  label: "Discovery → first working demo" },
-  { value: "<24h",  label: "Response time on every enquiry" },
-  { value: "100%",  label: "South African team & timezone" },
-  { value: "30d+",  label: "Post-launch warranty, every project" },
-];
-
-// Tech stack we work in — surfaced as a marquee on the home page.
+// Tech stack we work in — surfaced as a logo marquee on the home page.
+// Logo files live in /public/logos.
 export const stack = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Node.js",
-  "Python",
-  "Tailwind CSS",
-  "PostgreSQL",
-  "MongoDB",
-  "Power Apps",
-  "Power Automate",
-  "OpenAI",
-  "Claude",
-  "WordPress",
-  "WooCommerce",
-  "React Native",
-  "Cloudflare",
-  "Azure",
-  "AWS",
+  { name: "React", file: "react.svg" },
+  { name: "Next.js", file: "nextjs.svg" },
+  { name: "TypeScript", file: "typescript.svg" },
+  { name: "Node.js", file: "nodejs.svg" },
+  { name: "Python", file: "python.svg" },
+  { name: "Tailwind CSS", file: "tailwindcss.svg" },
+  { name: "PostgreSQL", file: "postgresql.svg" },
+  { name: "MongoDB", file: "mongodb.svg" },
+  { name: "Power Apps", file: "powerapps.svg" },
+  { name: "Power Automate", file: "powerautomate.svg" },
+  { name: "OpenAI", file: "openai.svg" },
+  { name: "Claude", file: "claude.svg" },
+  { name: "WordPress", file: "wordpress.svg" },
+  { name: "WooCommerce", file: "woocommerce.svg" },
+  { name: "Cloudflare", file: "cloudflare.svg" },
+  { name: "Azure", file: "azure.svg" },
+  { name: "AWS", file: "aws.svg" },
 ];
 
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import SiteBackground from "@/components/SiteBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -59,7 +60,8 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col overflow-x-hidden">
+      <body className="min-h-screen flex flex-col overflow-x-hidden bg-transparent">
+        <SiteBackground />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

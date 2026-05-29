@@ -61,13 +61,9 @@ export default function Nav() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-3">
-          <span className="hidden xl:inline-flex items-center gap-2 rounded-full border border-ink-200 px-3 py-1 text-xs font-mono text-ink-500">
-            <span className="dot-live" />
-            <span>accepting projects</span>
-          </span>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1.5 rounded-full bg-brand-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-800"
+            className="btn-glow inline-flex items-center gap-1.5 rounded-full bg-brand-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-800"
           >
             Start a project
             <ArrowRight />
@@ -113,15 +109,11 @@ export default function Nav() {
           })}
           <Link
             href="/contact"
-            className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-900 px-4 py-3 text-sm font-medium text-white"
+            className="btn-glow mt-3 inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-900 px-4 py-3 text-sm font-medium text-white"
           >
             Start a project
             <ArrowRight />
           </Link>
-          <span className="mt-2 inline-flex items-center justify-center gap-2 text-xs font-mono text-ink-500">
-            <span className="dot-live" />
-            accepting projects
-          </span>
         </Container>
       </div>
     </header>

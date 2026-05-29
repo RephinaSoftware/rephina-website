@@ -44,7 +44,7 @@ export default function WorkPage() {
                       className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-sky-400/25 blur-3xl"
                     />
                     <span className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full glass-dark px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/80">
-                      <span className="dot-live" />
+                      <span className="" />
                       {c.sector}
                     </span>
                     <span className="absolute right-5 top-5 font-mono text-[10px] text-white/40">

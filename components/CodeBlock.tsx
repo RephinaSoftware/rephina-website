@@ -21,8 +21,8 @@ export default function CodeBlock() {
 
   return (
     <div className="relative w-full max-w-md">
-      {/* outer glass frame */}
-      <div className="relative overflow-hidden rounded-2xl glass-dark shadow-2xl shadow-brand-950/40">
+      {/* outer frame — solid dark so the light terminal text stays legible on the white hero */}
+      <div className="relative overflow-hidden rounded-2xl bg-brand-950 border border-white/10 shadow-2xl shadow-brand-950/40">
         {/* window chrome */}
         <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-3">
           <div className="flex items-center gap-1.5">

@@ -60,10 +60,19 @@ html {
   scroll-behavior: smooth;
   /* prevent layout shift from scrollbar on overflow */
   scrollbar-gutter: stable;
+  /* hard guard against any horizontal overflow (doesn't break sticky nav) */
+  overflow-x: clip;
+}
+
+/* nothing should ever exceed the viewport width */
+img,
+svg,
+video {
+  max-width: 100%;
 }
 
 body {
-  background: white;
+  background: #f8fafc;
   color: var(--color-ink-900);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -117,24 +126,6 @@ body {
   background-size: 56px 56px;
 }
 
-.bg-dots {
-  background-image: radial-gradient(circle at 1px 1px, rgb(15 23 42 / 0.07) 1px, transparent 0);
-  background-size: 22px 22px;
-}
-
-/* Soft brand glow used behind hero / CTA */
-.brand-glow::before {
-  content: "";
-  position: absolute;
-  inset: -20% -10% auto -10%;
-  height: 80%;
-  background:
-    radial-gradient(50% 60% at 30% 35%, rgb(143 181 58 / 0.18), transparent 60%),
-    radial-gradient(45% 55% at 75% 50%, rgb(95 163 205 / 0.18), transparent 60%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: -1;
-}
 
 /* ─────────────────────────────────────────────────────────
    Gradient text — restrained navy → lime
@@ -164,27 +155,13 @@ body {
   transform: translateY(0);
 }
 
-/* Pulsing dot used for "live" / "in business" indicators */
-@keyframes ping-soft {
-  0%   { transform: scale(1);    opacity: 1; }
-  80%  { transform: scale(2.6);  opacity: 0; }
-  100% { transform: scale(2.6);  opacity: 0; }
-}
+/* Static "live" / status indicator dot (no pulse) */
 .dot-live {
-  position: relative;
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 9999px;
   background: var(--color-accent-500);
-}
-.dot-live::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: var(--color-accent-500);
-  animation: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 /* Terminal caret blink */
@@ -214,10 +191,18 @@ body {
 }
 .marquee:hover { animation-play-state: paused; }
 
+/* Lime highlight glow for primary buttons */
+.btn-glow {
+  transition: box-shadow 0.35s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+.btn-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgb(164 200 74 / 0.55), 0 12px 34px -10px rgb(143 181 58 / 0.6);
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .dot-live::after,
   .caret,
   .marquee { animation: none; }
   html { scroll-behavior: auto; }

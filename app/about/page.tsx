@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import PageHeader from "@/components/PageHeader";
 import CtaSection from "@/components/CtaSection";
 import Reveal from "@/components/Reveal";
+import ServiceIcon from "@/components/ServiceIcon";
 import { company, faqs } from "@/lib/content";
 
 export const metadata = {
@@ -11,12 +12,12 @@ export const metadata = {
 };
 
 const values = [
-  { title: "Accessibility first", body: "Every business deserves access to professional software — regardless of budget. We structure pricing, terms and engagement models to remove the barriers that exclude small businesses from quality technology." },
-  { title: "Practical over fancy", body: "We avoid over-engineering. Solutions are scoped to solve real business problems with measurable ROI, not to showcase tech for its own sake." },
-  { title: "Partnership & education", body: "We don't just deliver software — we train teams, demystify technology and build internal capacity so clients can make smart decisions long after we ship." },
-  { title: "Local context", body: "South African business reality drives every decision — POPIA, load-shedding contingencies, local payment gateways and Rand pricing." },
-  { title: "Quality without compromise", body: "Affordable doesn't mean cheap. Code review, automated tests, security best practice and production-grade infrastructure are non-negotiable." },
-  { title: "Transparent communication", body: "Plain language. Honest assessments. Complete clarity on cost, timeline and status. Trust is earned weekly, not at the end of a contract." },
+  { title: "Accessibility first", icon: "spark", body: "Every business deserves access to professional software — regardless of budget. We structure pricing, terms and engagement models to remove the barriers that exclude small businesses from quality technology." },
+  { title: "Practical over fancy", icon: "compass", body: "We avoid over-engineering. Solutions are scoped to solve real business problems with measurable ROI, not to showcase tech for its own sake." },
+  { title: "Partnership & education", icon: "book", body: "We don't just deliver software — we train teams, demystify technology and build internal capacity so clients can make smart decisions long after we ship." },
+  { title: "Local context", icon: "globe", body: "South African business reality drives every decision — POPIA, load-shedding contingencies, local payment gateways and Rand pricing." },
+  { title: "Quality without compromise", icon: "shield", body: "Affordable doesn't mean cheap. Code review, automated tests, security best practice and production-grade infrastructure are non-negotiable." },
+  { title: "Transparent communication", icon: "palette", body: "Plain language. Honest assessments. Complete clarity on cost, timeline and status. Trust is earned weekly, not at the end of a contract." },
 ];
 
 export default function AboutPage() {
@@ -33,7 +34,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-6 md:grid-cols-2">
             <Reveal>
-              <div className="h-full rounded-2xl border border-ink-100 bg-white/80 p-8 backdrop-blur sm:p-10">
+              <div className="h-full rounded-2xl glass-light p-8 shadow-sm sm:p-10">
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800">
                   // mission
                 </span>
@@ -64,12 +65,11 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="relative overflow-hidden bg-ink-50/50 py-24">
-        <div className="absolute inset-0 bg-grid opacity-50" aria-hidden="true" />
+      <section className="relative py-24">
         <Container className="relative">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
-              <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800">
+              <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800 shadow-sm">
                 values
               </span>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
@@ -81,10 +81,10 @@ export default function AboutPage() {
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 60}>
-                <div className="group h-full rounded-2xl border border-ink-100 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-900/[0.04]">
+                <div className="group h-full rounded-2xl glass-light p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand-900/[0.06]">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-700">
-                      {String(i + 1).padStart(2, "0")}
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-950 text-accent-400 shadow-sm shadow-brand-900/20">
+                      <ServiceIcon name={v.icon} className="h-5 w-5" />
                     </span>
                     <span className="h-1 w-12 rounded-full bg-ink-100 transition group-hover:bg-accent-400" />
                   </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <div className="grid gap-12 md:grid-cols-[1.4fr_1fr]">
             <Reveal>
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800">
+                <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800 shadow-sm">
                   who we are
                 </span>
                 <h2 className="mt-5 text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
@@ -137,22 +137,28 @@ export default function AboutPage() {
             </Reveal>
 
             <Reveal delay={120}>
-              <aside className="relative overflow-hidden rounded-2xl border border-ink-100 bg-white/80 p-6 backdrop-blur lg:sticky lg:top-28">
-                <div
-                  aria-hidden="true"
-                  className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-accent-500/10 blur-3xl"
-                />
-                <h3 className="relative font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500">
-                  // company.json
+              <aside className="lg:sticky lg:top-28">
+                <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-500">
+                  company.json
                 </h3>
-                <dl className="relative mt-5 grid gap-3 font-mono text-[13px]">
-                  <Row k="entity"   v={company.legalName} />
-                  <Row k="reg"      v={company.registration} />
-                  <Row k="status"   v={<span className="inline-flex items-center gap-1.5"><span className="dot-live" />in business</span>} />
-                  <Row k="area"     v="South Africa (remote-first)" />
-                  <Row k="compliance" v="POPIA-aware" />
-                  <Row k="email"    v={<a href={`mailto:${company.email}`} className="text-brand-800 hover:text-brand-900 break-all">{company.email}</a>} />
-                  <Row k="phone"    v={<a href={`tel:${company.phoneE164}`} className="text-brand-800 hover:text-brand-900">{company.phone}</a>} />
+                <dl className="mt-5 grid grid-cols-2 gap-3">
+                  <InfoCard k="legalName" v={company.legalName} wide />
+                  <InfoCard k="registration" v={company.registration} />
+                  <InfoCard
+                    k="status"
+                    v={<span className="inline-flex items-center gap-1.5"><span className="" />In business</span>}
+                  />
+                  <InfoCard k="region" v="South Africa" />
+                  <InfoCard k="compliance" v="POPIA-aware" />
+                  <InfoCard
+                    k="email"
+                    wide
+                    v={<a href={`mailto:${company.email}`} className="text-brand-800 hover:text-brand-900 break-all">{company.email}</a>}
+                  />
+                  <InfoCard
+                    k="phone"
+                    v={<a href={`tel:${company.phoneE164}`} className="text-brand-800 hover:text-brand-900">{company.phone}</a>}
+                  />
                 </dl>
               </aside>
             </Reveal>
@@ -161,11 +167,11 @@ export default function AboutPage() {
       </section>
 
       {/* FAQ */}
-      <section className="relative bg-ink-50/50 py-24">
+      <section className="relative py-24">
         <Container>
           <Reveal>
             <div className="mx-auto max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800">
+              <span className="inline-flex items-center gap-2 rounded-full glass-light px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-brand-800 shadow-sm">
                 faq
               </span>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-ink-900 sm:text-4xl">
@@ -174,12 +180,11 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
-          <div className="mx-auto mt-10 max-w-3xl divide-y divide-ink-100 overflow-hidden rounded-2xl border border-ink-100 bg-white/80 backdrop-blur">
-            {faqs.map((f, i) => (
+          <div className="mx-auto mt-10 max-w-3xl divide-y divide-ink-100 overflow-hidden rounded-2xl glass-light shadow-sm">
+            {faqs.map((f) => (
               <details key={f.q} className="group p-6 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex cursor-pointer items-start justify-between gap-4 text-base font-semibold text-ink-900">
                   <span className="flex items-baseline gap-3">
-                    <span className="font-mono text-[11px] text-ink-400">{String(i + 1).padStart(2, "0")}</span>
                     {f.q}
                   </span>
                   <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink-100 text-ink-600 transition group-open:rotate-45 group-open:bg-brand-900 group-open:text-white">
@@ -205,11 +210,23 @@ export default function AboutPage() {
   );
 }
 
-function Row({ k, v }: { k: string; v: React.ReactNode }) {
+function InfoCard({
+  k,
+  v,
+  wide = false,
+}: {
+  k: string;
+  v: React.ReactNode;
+  wide?: boolean;
+}) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-ink-100 pb-2 last:border-0 last:pb-0">
-      <dt className="text-ink-500">{k}</dt>
-      <dd className="text-right text-ink-900">{v}</dd>
+    <div
+      className={`rounded-xl glass-light p-4 shadow-sm transition hover:-translate-y-0.5 ${
+        wide ? "col-span-2" : ""
+      }`}
+    >
+      <dt className="font-mono text-[11px] text-accent-700">{k}</dt>
+      <dd className="mt-1 text-sm font-medium text-ink-900">{v}</dd>
     </div>
   );
 }
